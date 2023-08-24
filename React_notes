@@ -1,0 +1,32 @@
+VScode - type - html:5 - > it will create basic html file
+
+CDN - React is hosted
+
+Go to console - Type React
+
+React has 2 libs - coz it doesn't just work for browsers, it is used in Mobiles - React native + React, React + React-dom  for browsers
+
+React.creatElement - from react core, React.createRoot - from React dom
+
+Third parameter in React.createElement we can pass multiple React elements if we want to have siblings
+
+DOM manipulation is a costly operation
+
+React.createElement - returns a React element which is JS object,  not DOM tag object, render method convert React element to DOM tag
+
+root.render replaces what is inside root
+
+React is a library - why? - it is scoped inside root. It can exist inside anything we make as root. It's not a full fledged framework
+=================================================================================
+
+EP-2
+
+=> create new repo in github - git init - git branch -M main - this will make 'main' as main branch, earlier it ws master
+
+github is a client - a place where we can host git repositries
+git add .
+git commit -m "episode-1"
+My local git does not know what is remote -  so un below cmd
+git remote add origin https://github.com/abhijitpandey30/namaste-react.git
+
+Configure github ssh key - search for it - open 
