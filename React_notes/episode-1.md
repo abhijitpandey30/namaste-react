@@ -17,16 +17,3 @@ React.createElement - returns a React element which is JS object,  not DOM tag o
 root.render replaces what is inside root
 
 React is a library - why? - it is scoped inside root. It can exist inside anything we make as root. It's not a full fledged framework
-=================================================================================
-
-EP-2
-
-=> create new repo in github - git init - git branch -M main - this will make 'main' as main branch, earlier it ws master
-
-github is a client - a place where we can host git repositries
-git add .
-git commit -m "episode-1"
-My local git does not know what is remote -  so un below cmd
-git remote add origin https://github.com/abhijitpandey30/namaste-react.git
-
-Configure github ssh key - search for it - open 
