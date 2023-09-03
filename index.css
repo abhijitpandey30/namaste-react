@@ -39,8 +39,9 @@
     word-wrap: break-word
 }
 
-.search {
-    padding: 10px;
+.filter-btn {
+    margin: 10px 0;
+    cursor: pointer;
 }
 
 .res-img {
