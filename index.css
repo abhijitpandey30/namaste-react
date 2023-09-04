@@ -39,7 +39,8 @@
     word-wrap: break-word
 }
 
-.filter-btn {
+.filter {
+    display: flex;
     margin: 10px 0;
     cursor: pointer;
 }
@@ -48,3 +49,28 @@
     width: 100%;
     
 }
+
+.shimmer-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.shimmer-card {
+    width: 250px;
+    height: 400px;
+    background-color: #f0f0f0;  
+}
+
+.login {
+    padding: 0px 18px;
+    margin: 0 18px;
+    cursor: pointer;
+}
+
+.search {
+    margin-right: 10px;
+}
+
