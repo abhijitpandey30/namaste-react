@@ -24,8 +24,12 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+
 }
 
+.res-container a {
+    text-decoration: none;
+}
 .res-card {
     width: 200px;
     padding: 5px;
