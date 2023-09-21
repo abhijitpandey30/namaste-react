@@ -1,9 +1,10 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, {withVegNonVegLabelRestaurantCard} from "./RestaurantCard";
 import Shimmer from "./Shimmer";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext} from "react";
 import { Link } from "react-router-dom";
 import resList from "../utils/mock-data";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredListOfRestaurants, setFilteredListOfRestaurants] = useState(
@@ -32,6 +33,10 @@ const Body = () => {
 
   const [searchText, setSearchText] = useState("");
   const onlineStatus = useOnlineStatus();
+
+
+  const { setUserName, loggedInUser } = useContext(UserContext);
+  const RestaurantCardVegNonVeg = withVegNonVegLabelRestaurantCard(RestaurantCard);
 
   if (onlineStatus === false)
     return (
@@ -68,6 +73,7 @@ const Body = () => {
             Search
           </button>
         </div>
+        
         <div className="flex items-center">
           <button
             className="px-4 py-2 bg-gray-100 rounded-lg"
@@ -81,11 +87,18 @@ const Body = () => {
             To rated restaurant
           </button>
         </div>
+        <div className="flex items-center px-4">
+          <label className="pr-2">User:
+
+          </label>
+          <input value={loggedInUser} onChange={(e)=> setUserName(e.target.value)} className="border border-black p-2"/>
+        </div>
       </div>
-      <div className="flex wrap">
+      <div className="flex flex-wrap">
         {filteredListOfRestaurants?.map((res) => (
           <Link key={res.info.id} to={`/restaurants/${res.info.id}`}>
-            <RestaurantCard resData={res} />
+              {res.info.veg ? <RestaurantCardVegNonVeg resData={res}/> : <RestaurantCard resData={res} />}
+            
           </Link>
         ))}
       </div>

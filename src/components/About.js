@@ -1,7 +1,7 @@
 import React from "react";
 import User from "./user";
 import UserClass from "./UserClass";
-
+import UserContext from "../utils/UserContext";
 class About extends React.Component {
 
 
@@ -19,6 +19,11 @@ class About extends React.Component {
         <h1>About</h1>
         <h2>This is Swiggy custom APP</h2>
         {/* <User name={"Abhijit"}/> */}
+        <h2>LoggedIn User: 
+          <UserContext.Consumer>
+            {({loggedInUser})=> loggedInUser }
+          </UserContext.Consumer>
+        </h2>
 
         <UserClass sequence={"1"} name={"Abhijit"} />
         {/* <UserClass sequence={"2"} name={"Abhijit"} /> */}
