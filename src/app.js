@@ -11,6 +11,9 @@ import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Shimmer from "./components/Shimmer";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
 // import Grocery from "./components/Grocery";
 
 const AppLayout = () => {
@@ -20,20 +23,20 @@ const AppLayout = () => {
   useEffect(() => {
     // some API to validate username pwd
     const data = {
-      name: "AbhiJit Pandey",
+      name: "Abhijit Pandey",
     };
     setUserName(data.name);
   }, []);
 
   return (
-    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-      <div className="app">
-        <UserContext.Provider value={{ loggedInUser: "Elon Musk" }}>
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+        <div className="app">
           <Header />
-        </UserContext.Provider>
-        <Outlet />
-      </div>
-    </UserContext.Provider>
+          <Outlet />
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
@@ -74,6 +77,10 @@ const appRouter = createBrowserRouter([
         path: "restaurants/:resId",
         element: <RestaurantMenu />,
       },
+      {
+        path:"cart",
+        element: <Cart/>
+      }
     ],
   },
 ]);
