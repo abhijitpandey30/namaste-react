@@ -33,7 +33,7 @@ return (
           <li className="px-4">Online Status: {onlineStatus ? '✅': '❌'}</li>
           <li className="px-4"><Link to="/">Home</Link></li>
           <li className="px-4"><Link to="/about">About</Link></li>
-          <li className="px-4"><Link to="/about">Contact Us</Link></li>
+          <li className="px-4"><Link to="/contact">Contact Us</Link></li>
           <li className="px-4"><Link to="/grocery">Grocery</Link></li>
           <li className="px-4 font-bold text-xl"><Link to="/cart">Cart {cartItems.length} items</Link></li>
           {/* <button className="login" onClick={()=> {
@@ -41,7 +41,7 @@ return (
             console.log(btnName)
           }}>{btnName}</button> */}
           <button className="login" onClick={()=> {
-            btnNameReact === "Login"? setBtnNameReact("Logout") : setBtnNameReact("Login")
+            btnNameReact === "Login"? setBtnNameReact("Logout") : setBtnNameReact("Login") 
           }}>{btnNameReact}</button>
           <li className="px-4 font-bold">{loggedInUser}</li>
         </ul>

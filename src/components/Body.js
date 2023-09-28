@@ -1,6 +1,8 @@
-import RestaurantCard, {withVegNonVegLabelRestaurantCard} from "./RestaurantCard";
+import RestaurantCard, {
+  withVegNonVegLabelRestaurantCard,
+} from "./RestaurantCard";
 import Shimmer from "./Shimmer";
-import { useState, useEffect, useContext} from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import resList from "../utils/mock-data";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -22,7 +24,7 @@ const Body = () => {
     );
 
     const json = await data.json();
-    console.log(json);
+    //console.log(json);
     setListOfRestaurants(
       json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
@@ -34,9 +36,9 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
   const onlineStatus = useOnlineStatus();
 
-
   const { setUserName, loggedInUser } = useContext(UserContext);
-  const RestaurantCardVegNonVeg = withVegNonVegLabelRestaurantCard(RestaurantCard);
+  const RestaurantCardVegNonVeg =
+    withVegNonVegLabelRestaurantCard(RestaurantCard);
 
   if (onlineStatus === false)
     return (
@@ -53,11 +55,11 @@ const Body = () => {
     <div className="body">
       <div className="flex">
         <div className="m-4 p-4">
-          <input
+          <input data-testid="searchInput"
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
-            className="border border-solid border-black"
+            className="border border-solid border-black p-2"
             value={searchText}
           />
           <button
@@ -73,7 +75,7 @@ const Body = () => {
             Search
           </button>
         </div>
-        
+
         <div className="flex items-center">
           <button
             className="px-4 py-2 bg-gray-100 rounded-lg"
@@ -84,21 +86,27 @@ const Body = () => {
               setFilteredListOfRestaurants(filteredList);
             }}
           >
-            To rated restaurant
+            Top rated restaurants
           </button>
         </div>
         <div className="flex items-center px-4">
-          <label className="pr-2">User:
-
-          </label>
-          <input value={loggedInUser} onChange={(e)=> setUserName(e.target.value)} className="border border-black p-2"/>
+          <label className="pr-2">User:</label>
+          <input
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}
+            className="border border-black p-2"
+          />
         </div>
       </div>
       <div className="flex flex-wrap">
         {filteredListOfRestaurants?.map((res) => (
           <Link key={res.info.id} to={`/restaurants/${res.info.id}`}>
-              {res.info.veg ? <RestaurantCardVegNonVeg resData={res}/> : <RestaurantCard resData={res} />}
-            
+            {/* {res.info.veg ? <RestaurantCardVegNonVeg resData={res}/> : <RestaurantCard resData={res} />} */}
+            {res?.info.veg ? (
+              <RestaurantCardVegNonVeg resData={res?.info} />
+            ) : (
+              <RestaurantCard resData={res?.info} />
+            )}
           </Link>
         ))}
       </div>

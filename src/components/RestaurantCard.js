@@ -7,11 +7,19 @@ const styleCard = {
     backgroundColor: "#f0f0f0",
   };
   const RestaurantCard = (props) => {
-    const { resData:{info:{name, cuisines, avgRating, sla:{slaString}, cloudinaryImageId}} } = props;
-    // console.log(resData);
+    // const { resData:{info:{name, cuisines, avgRating, sla:{slaString}, cloudinaryImageId}} } = props;
+    const { resData } = props;
+    const {
+      cloudinaryImageId,
+      name,
+      avgRating,
+      cuisines,
+      sla:{slaString}
+    } = resData;
+    //console.log(resData)
     const {loggedInUser} = useContext(UserContext)
     return (
-      <div className="m-4 p-4 w-[250px] rounded-lg bg-gray-100 hover:bg-gray-200" >
+      <div data-testid="resCard" className="m-4 p-4 w-[250px] rounded-lg bg-gray-100 hover:bg-gray-200" >
         <img
           className="rounded-lg"
           src={`${CDN_URL}/${cloudinaryImageId}`}
@@ -30,7 +38,7 @@ const styleCard = {
     return (props)=>{
       return (
         <div>
-          <label className="absolute bg-black text-green-300 m-2 p-2 rounded-lg">Vegeterian</label>
+          <label className="absolute bg-black text-green-300 m-2 p-2 rounded-lg">Vegetarian</label>
           <RestaurantCard {...props}/>
         </div>
       )

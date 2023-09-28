@@ -1,0 +1,81 @@
+{
+  "id": "239591",
+  "name": "Superman Momos",
+  "cloudinaryImageId": "fefhpbcpxrsj8beigyq2",
+  "locality": "Pimple Saudagar",
+  "areaName": "Pimple Nilakh",
+  "costForTwo": "₹200 for two",
+  "veg": true,
+  "cuisines": [
+    "Chinese",
+    "Tibetan",
+    "Nepalese",
+    "Tandoor",
+    "Pizzas",
+    "Snacks",
+    "Beverages"
+  ],
+  "avgRating": 3.6,
+  "feeDetails": {
+    "restaurantId": "239591",
+    "fees": [
+      {
+        "name": "BASE_TIME"
+      },
+      {
+        "name": "BASE_DISTANCE",
+        "fee": 4200
+      },
+      {
+        "name": "ANCILLARY_SURGE_FEE"
+      }
+    ],
+    "totalFee": 4200
+  },
+  "parentId": "314574",
+  "avgRatingString": "3.6",
+  "totalRatingsString": "1K+",
+  "sla": {
+    "deliveryTime": 34,
+    "lastMileTravel": 1.5,
+    "serviceability": "SERVICEABLE",
+    "slaString": "34 mins",
+    "lastMileTravelString": "1.5 km",
+    "iconType": "ICON_TYPE_EMPTY"
+  },
+  "availability": {
+    "nextCloseTime": "2023-09-27 06:00:00",
+    "opened": true
+  },
+  "badges": {},
+  "isOpen": true,
+  "type": "F",
+  "badgesV2": {
+    "entityBadges": {
+      "imageBased": {},
+      "textBased": {},
+      "textExtendedBadges": {}
+    }
+  },
+  "aggregatedDiscountInfoV3": {
+    "header": "60% OFF",
+    "subHeader": "UPTO ₹120"
+  },
+  "orderabilityCommunication": {
+    "title": {},
+    "subTitle": {},
+    "message": {},
+    "customIcon": {}
+  },
+  "differentiatedUi": {
+    "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+    "differentiatedUiMediaDetails": {
+      "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+      "lottie": {},
+      "video": {}
+    }
+  },
+  "reviewsSummary": {},
+  "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+  "restaurantOfferPresentationInfo": {}
+}

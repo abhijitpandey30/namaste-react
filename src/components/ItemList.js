@@ -3,7 +3,7 @@ import { addItem } from "../utils/cartSlice";
 import { CDN_URL } from "../utils/constants";
 
 const ItemList = ({ items }) => {
-  console.log(items);
+  //console.log(items);
   const dispatch = useDispatch();
   const handleAddItem = (item)=>{
     dispatch(addItem(item))
@@ -11,7 +11,7 @@ const ItemList = ({ items }) => {
   return (
     <div>
       {items.map((item) => (
-        <div
+        <div data-testid="food-items"
           key={item?.card?.info?.id}
           className="p-2 m-2 border-gray-200 border-b-2 text-left flex justify-between"
         >
